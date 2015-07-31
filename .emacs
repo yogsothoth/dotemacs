@@ -17,6 +17,8 @@
 ;; I don't want to have to type ALT-x or META-x, but
 ;; use Control instead
 (global-set-key (kbd "C-c ;") 'execute-extended-command)
+(global-set-key (kbd "C-c /") 'search-forward-regexp)
+(global-set-key (kbd "C-c ?") 'search-backward-regexp)
 
 ;; Colour themes
 ;; Use the replace-colorthemes package
@@ -79,7 +81,8 @@ Ignores CHAR at point."
 (load-user-file "r.el")
 (load-user-file "perl.el")
 
-
+;; Keep the cursor blinking forever
+(setq blink-cursor-blinks 0)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
