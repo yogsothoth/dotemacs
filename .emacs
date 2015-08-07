@@ -63,6 +63,27 @@ Ignores CHAR at point."
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
+;; company-mode everywhere
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; YASnippet
+;; the following should help if do the right thing when company-mode is enabled
+;; taken from http://stackoverflow.com/questions/2087225/about-the-fix-for-the-interference-between-company-mode-and-yasnippet
+
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(defun company-yasnippet-or-completion ()
+  (interactive)
+  (let ((yas-fallback-behavior nil))
+    (unless (yas-expand)
+      (call-interactively #'company-complete-common))))
+
+(add-hook 'company-mode-hook (lambda ()
+			       (substitute-key-definition 'company-complete-common
+							  'company-yasnippet-or-completion
+							  company-active-map)))
+
 ;; load personal stuff
 ;; this is taken directy from here
 ;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
