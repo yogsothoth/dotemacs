@@ -25,3 +25,7 @@
     ;; On Windows, I want a neater default font at least
     (set-face-attribute 'default nil :family "Consolas" :height 100)
     (w32-send-sys-command 61488))) ; do this after setting the font (will resize the window!)
+
+;; increase / decrease text size
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
