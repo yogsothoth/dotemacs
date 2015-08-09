@@ -4,13 +4,14 @@
 ;; head utility for OSes where it's missing
 (defun eshell/head (filePath n)
   "Insert the N first lines from the file at filePath."
+  (eshell-flush -1)
   (let* ((oldbuf (current-buffer))
 	(contents (with-temp-buffer
 		    (insert-file-contents filePath)
 		    (split-string (buffer-string) "\n" t))))
     (mapc (lambda (x)
-	   (insert (concat "\n" x))) (nfirst n contents))
-    nil))
+	   (eshell-buffered-print (concat x "\n"))) (nfirst n contents))
+    (eshell-flush)))
 
 (defun nfirst (n aList)
   "Returns the N first items from aList."
