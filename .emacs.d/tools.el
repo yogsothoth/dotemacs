@@ -10,10 +10,10 @@
 		    (insert-file-contents filepath)
 		    (split-string (buffer-string) "\n" t))))
     (mapc (lambda (x)
-	   (eshell-buffered-print (concat x "\n"))) (kafka/nfirst n contents))
+	   (eshell-buffered-print (concat x "\n"))) (kafka-nfirst n contents))
     (eshell-flush)))
 
-(defun kafka/nfirst (n elements)
+(defun kafka-nfirst (n elements)
   "Returns the first N items from ELEMENTS, which must be a list."
   (cond ((> n (length elements)) (nfirst (length elements) elements))
         ((= n 0) nil)
@@ -35,7 +35,7 @@
 
 ;; word count
 ;; buggy and stupid for now
-(defun kafka/count-words-region (start end)
+(defun kafka-count-words-region (start end)
   "Count regular words in the region between START and END."
   (interactive "r")
     (let ((count 0))
