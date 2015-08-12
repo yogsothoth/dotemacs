@@ -92,6 +92,36 @@ Ignores CHAR at point."
 							  'company-yasnippet-or-completion
 							  company-active-map)))
 
+
+
+;; ido
+;; config from https://masteringemacs.org/article/introduction-to-ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-create-new-buffers 'always)
+(setq ido-ignore-extensions t)
+
+;; open recent files
+;; recentf + ido
+;; taken from https://masteringemacs.org/article/find-files-faster-recent-files-package
+(require 'recentf)
+
+(defun ido-recentf-open ()
+  "Use 'ido-completing-read' to \\[find-file]] a recent file"
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file:" recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+
+(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+
+(recentf-mode t)
+
+(setq recentf-max-saved-items 50)
+
+
 ;; load personal stuff
 ;; this is taken directy from here
 ;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
