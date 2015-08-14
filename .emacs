@@ -71,6 +71,16 @@ Ignores CHAR at point."
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
+;; Revert (reload) a buffer from file
+;; taken from
+(defun revert-this-buffer ()
+  (interactive)
+  (revert-buffer nil t t)
+  (message (concat "Reverted buffer " (buffer-name))))
+
+(global-set-key (kbd "<f5>") 'revert-this-buffer)
+
+
 ;; company-mode everywhere
 (add-hook 'after-init-hook 'global-company-mode)
 
