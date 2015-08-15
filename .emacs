@@ -80,6 +80,8 @@ Ignores CHAR at point."
 
 (global-set-key (kbd "<f5>") 'revert-this-buffer)
 
+;; Open file in the other window
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
 ;; company-mode everywhere
 (add-hook 'after-init-hook 'global-company-mode)
