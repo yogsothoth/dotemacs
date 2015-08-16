@@ -6,6 +6,9 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+;; No startup screen
+(setq inhibit-splash-screen t)
+
 ;; Colour themes
 ;; Use the replace-colorthemes package
 ;; from https://github.com/emacs-jp/replace-colorthemes
