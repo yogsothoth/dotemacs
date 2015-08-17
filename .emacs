@@ -150,6 +150,7 @@ Ignores CHAR at point."
   "Load a file in current user's configuration directory"
   (load-file (expand-file-name file user-init-dir)))
 
+(load-user-file "my-packages.el")
 (load-user-file "ui.el")
 (load-user-file "latex.el")
 (load-user-file "r.el")
