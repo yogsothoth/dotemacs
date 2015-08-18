@@ -156,6 +156,7 @@ Ignores CHAR at point."
 (load-user-file "r.el")
 (load-user-file "perl.el")
 (load-user-file "elisp.el")
+(load-user-file "clojure.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -8,6 +8,7 @@
 
 (setq my-packages '(anti-zenburn-theme
 		    auctex
+		    cider
 		    clojure-mode
 		    clojure-mode-extra-font-locking
 		    cmake-project
