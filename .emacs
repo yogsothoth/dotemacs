@@ -22,6 +22,10 @@
 ;; but recent emacs versions seem to do something sensible with plain RET nowadays
 (global-set-key (kbd "C-j") 'backward-kill-word)
 
+;; bookmarks
+;; automatically save bookmarks
+(setq bookmark-save-flag 1)
+
 ;; Some handy functions
 ;; zap-up-to-char
 ;; Deletes up to ARGth occurrence of char, without deleting char
