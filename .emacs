@@ -162,6 +162,14 @@ Ignores CHAR at point."
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
 
+;; set exec-path
+(setq exec-path
+	(append
+	 exec-path
+	 '("~/bin")))
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
