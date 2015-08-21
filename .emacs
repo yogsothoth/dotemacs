@@ -87,6 +87,9 @@ Ignores CHAR at point."
 ;; Open file in the other window
 (global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
 
+;; Cleanup buffers automatically
+(require 'midnight)
+
 ;; company-mode everywhere
 (add-hook 'after-init-hook 'global-company-mode)
 
