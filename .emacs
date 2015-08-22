@@ -7,140 +7,6 @@
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;; Global keybindings
-;; I don't want to have to type ALT-x or META-x, but
-;; use Control instead
-(global-set-key (kbd "C-c ;") 'execute-extended-command)
-
-;; use standard keys for searching
-(global-set-key (kbd "C-c /") 'search-forward-regexp)
-(global-set-key (kbd "C-c ?") 'search-backward-regexp)
-
-;; erase whole words in case of typos and bind that to something on
-;; the home row
-;; C-j is bound to newline-and-indent by default
-;; but recent emacs versions seem to do something sensible with plain RET nowadays
-(global-set-key (kbd "C-j") 'backward-kill-word)
-
-;; bookmarks
-;; automatically save bookmarks
-(setq bookmark-save-flag 1)
-
-;; Some handy functions
-;; zap-up-to-char
-;; Deletes up to ARGth occurrence of char, without deleting char
-;; Note: was at some point in the main Emacs repo, but can't find it now
-;; http://repo.or.cz/w/emacs.git/blob/HEAD:/lisp/misc.el
-(defun zap-up-to-char (arg char)
-  "Kill up to, but not including ARGth occurrence of CHAR.
-Case is ignored if `case-fold-search' is non-nil in the current buffer.
-Goes backward if ARG is negative; error if CHAR not found.
-Ignores CHAR at point."
-  (interactive "p\ncZap up to char: ")
-  (let ((direction (if (>= arg 0) 1 -1)))
-    (kill-region (point)
-		 (progn
-		   (forward-char direction)
-		   (unwind-protect
-		       (search-forward (char-to-string char) nil nil arg)
-		     (backward-char direction))
-		   (point)))))
-
-(global-set-key "\M-Z" 'zap-to-char)
-(global-set-key "\M-z" 'zap-up-to-char)
-
-;; emulate vi' J command
-(defun join-next-line ()
-       "Join the current line with the next one, leaving point unchanged."
-       (interactive)
-       (save-excursion
-	(next-line)
-	(join-line)))
-(global-set-key (kbd "C-c j") 'join-next-line)
-
-;; rename buffers and files
-;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
-(defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "sNew name: ")
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
-    (if (not filename)
-        (message "Buffer '%s' is not visiting a file!" name)
-      (if (get-buffer new-name)
-          (message "A buffer named '%s' already exists!" new-name)
-        (progn
-          (rename-file name new-name 1)
-          (rename-buffer new-name)
-          (set-visited-file-name new-name)
-          (set-buffer-modified-p nil))))))
-
-;; Revert (reload) a buffer from file
-;; taken from
-(defun revert-this-buffer ()
-  (interactive)
-  (revert-buffer nil t t)
-  (message (concat "Reverted buffer " (buffer-name))))
-
-(global-set-key (kbd "<f5>") 'revert-this-buffer)
-
-;; Open file in the other window
-(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
-
-;; Cleanup buffers automatically
-(require 'midnight)
-
-;; company-mode everywhere
-(add-hook 'after-init-hook 'global-company-mode)
-
-;; YASnippet
-;; the following should help if do the right thing when company-mode is enabled
-;; taken from http://stackoverflow.com/questions/2087225/about-the-fix-for-the-interference-between-company-mode-and-yasnippet
-
-(require 'yasnippet)
-(yas-global-mode 1)
-
-(defun company-yasnippet-or-completion ()
-  (interactive)
-  (let ((yas-fallback-behavior nil))
-    (unless (yas-expand)
-      (call-interactively #'company-complete-common))))
-
-(add-hook 'company-mode-hook (lambda ()
-			       (substitute-key-definition 'company-complete-common
-							  'company-yasnippet-or-completion
-							  company-active-map)))
-
-
-
-;; ido
-;; config from https://masteringemacs.org/article/introduction-to-ido-mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-(setq ido-use-filename-at-point 'guess)
-(setq ido-create-new-buffers 'always)
-(setq ido-ignore-extensions t)
-
-;; open recent files
-;; recentf + ido
-;; taken from https://masteringemacs.org/article/find-files-faster-recent-files-package
-(require 'recentf)
-
-(defun ido-recentf-open ()
-  "Use 'ido-completing-read' to \\[find-file]] a recent file"
-  (interactive)
-  (if (find-file (ido-completing-read "Find recent file:" recentf-list))
-      (message "Opening file...")
-    (message "Aborting")))
-
-(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
-
-(recentf-mode t)
-
-(setq recentf-max-saved-items 50)
-
-
 ;; load personal stuff
 ;; this is taken directy from here
 ;; http://stackoverflow.com/questions/2079095/how-to-modularize-an-emacs-configuration
@@ -157,13 +23,33 @@ Ignores CHAR at point."
   "Load a file in current user's configuration directory"
   (load-file (expand-file-name file user-init-dir)))
 
+;; download and install automatically all missing packages
 (load-user-file "my-packages.el")
+
+;; load my own functions
+(load-user-file "my-funcs.el")
+
+;; configure the ui
 (load-user-file "ui.el")
+
+;; global completion configuration
+(load-user-file "completion.el")
+
+;; modes-specific configuration
 (load-user-file "latex.el")
 (load-user-file "r.el")
 (load-user-file "perl.el")
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
+
+;; eshell functions
+(load-user-file "my-eshell.el")
+
+;; buffers and file opening
+(load-user-file "buffers.el")
+
+;; keybindings
+(load-user-file "keybindings.el")
 
 ;; set exec-path
 (setq exec-path
@@ -171,6 +57,10 @@ Ignores CHAR at point."
 	 exec-path
 	 '("~/bin")))
 
+
+;; bookmarks
+;; automatically save bookmarks
+(setq bookmark-save-flag 1)
 
 
 (custom-set-variables
