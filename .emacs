@@ -1,11 +1,7 @@
 ;; .emacs file
 ;; Nicolas Herry (kafka)
 
-;; Packages
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(package-initialize)
+
 
 ;; load personal stuff
 ;; this is taken directy from here
@@ -41,7 +37,7 @@
 (load-user-file "perl.el")
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
-
+(load-user-file "haskell.el")
 ;; eshell functions
 (load-user-file "my-eshell.el")
 
