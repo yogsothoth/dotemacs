@@ -15,8 +15,8 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/replace-colorthemes"))
 
-(load-theme 'wombat t t)
-(enable-theme 'wombat)
+(load-theme 'dark-blue t t)
+(enable-theme 'dark-blue)
 
 ;; Keep the cursor blinking forever
 (setq blink-cursor-blinks 0)
