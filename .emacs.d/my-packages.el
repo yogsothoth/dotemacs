@@ -2,6 +2,15 @@
 ;; install packages automatically
 ;; if they're not installed already
 
+;; Packages
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
 (defun kafka-install-package (package-name)
   (unless (package-installed-p package-name)
     (package-install package-name)))
