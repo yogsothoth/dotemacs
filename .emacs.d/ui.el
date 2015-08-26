@@ -32,3 +32,12 @@
 ;; increase / decrease text size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
+
+;; taken from http://emacs-fu.blogspot.fr/2008/12/highlighting-current-line.html
+;; highlight the current line; set a custom face, so we can
+;; recognize from the normal marking (selection)
+(defface hl-line '((t (:background "DeepSkyBlue4")))
+  "Face to use for `hl-line-face'." :group 'hl-line)
+(setq hl-line-face 'hl-line)
+; turn it on for all modes by default
+(global-hl-line-mode t)
