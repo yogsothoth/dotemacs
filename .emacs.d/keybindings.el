@@ -28,3 +28,11 @@
 
 ;; open recent files
 (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
+
+;; move META to Command on OS X
+;; so { } [ ] \ can be typed
+;; still need to find where to put CTRL-Space
+(if (eq system-type 'darwin)
+    (setq mac-option-modifier nil
+	  mac-command-modifier 'meta
+	  x-select-enable-clipboard t))
