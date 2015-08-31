@@ -41,3 +41,11 @@
 (setq hl-line-face 'hl-line)
 ; turn it on for all modes by default
 (global-hl-line-mode t)
+
+;; anzu
+;; put here for lack of a better place
+;; configuration taken from pragmaticemacs.com/emacs/prettier-text-replacement-with-anzu/
+(require 'anzu)
+(global-anzu-mode)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
