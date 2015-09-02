@@ -33,6 +33,23 @@
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
+;; taken from http://emacs-fu.blogspot.fr/2008/12/highlighting-current-line.html
+;; highlight the current line; set a custom face, so we can
+;; recognize from the normal marking (selection)
+(defface hl-line '((t (:background "DeepSkyBlue4")))
+  "Face to use for `hl-line-face'." :group 'hl-line)
+(setq hl-line-face 'hl-line)
+; turn it on for all modes by default
+(global-hl-line-mode t)
+
+;; anzu
+;; put here for lack of a better place
+;; configuration taken from pragmaticemacs.com/emacs/prettier-text-replacement-with-anzu/
+(require 'anzu)
+(global-anzu-mode)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+
 ;; maximise on startup
 (require 'maxframe)
 (add-hook 'window-setup-hook 'maximize-frame t)

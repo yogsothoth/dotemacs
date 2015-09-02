@@ -38,6 +38,9 @@
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
 (load-user-file "haskell.el")
+(load-user-file "sql.el")
+(load-user-file "soql.el")
+
 ;; eshell functions
 (load-user-file "my-eshell.el")
 
