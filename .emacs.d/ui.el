@@ -32,3 +32,7 @@
 ;; increase / decrease text size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
+
+;; maximise on startup
+(require 'maxframe)
+(add-hook 'window-setup-hook 'maximize-frame t)
