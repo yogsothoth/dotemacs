@@ -50,6 +50,8 @@
 ;; keybindings
 (load-user-file "keybindings.el")
 
+;; web stuff
+(load-user-file "web.el")
 ;; set exec-path
 (setq exec-path
 	(append

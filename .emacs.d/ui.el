@@ -51,5 +51,6 @@
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
 ;; maximise on startup
-(require 'maxframe)
-(add-hook 'window-setup-hook 'maximize-frame t)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (require 'maxframe)
+;; (add-hook 'window-setup-hook 'maximize-frame t)
