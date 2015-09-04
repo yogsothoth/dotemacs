@@ -52,6 +52,10 @@
 
 ;; web stuff
 (load-user-file "web.el")
+
+;; stupid stuff
+(load-user-file "zone.el")
+
 ;; set exec-path
 (setq exec-path
 	(append
