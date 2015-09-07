@@ -50,6 +50,12 @@
 ;; keybindings
 (load-user-file "keybindings.el")
 
+;; email
+;; can't get this to work on windows
+;; disable it on windows for now
+(when (not (eq system-type 'windows-nt))
+    (load-user-file "gnus.el"))
+
 ;; web stuff
 (load-user-file "web.el")
 
