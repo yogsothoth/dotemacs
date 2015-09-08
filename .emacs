@@ -59,6 +59,9 @@
 ;; web stuff
 (load-user-file "web.el")
 
+;; muse
+(load-user-file "my-muse.el")
+
 ;; stupid stuff
 (load-user-file "zone.el")
 
