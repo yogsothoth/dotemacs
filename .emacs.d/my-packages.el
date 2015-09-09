@@ -16,6 +16,7 @@
     (package-install package-name)))
 
 (setq my-packages '(anti-zenburn-theme
+		    anzu
 		    auctex
 		    cider
 		    clojure-mode
@@ -30,6 +31,7 @@
 		    ess
 		    js2-mode
 		    js3-mode
+		    muse
 		    paredit
 		    simple-httpd
 		    skewer-less

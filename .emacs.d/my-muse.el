@@ -15,4 +15,6 @@
 ;; organise files in projects
 (require 'muse-project)
 
+;; use footnote when editing muse files
+(add-hook 'muse-mode-hook 'footnote-mode)
 
