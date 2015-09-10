@@ -16,5 +16,10 @@
 (require 'muse-project)
 
 ;; use footnote when editing muse files
-(add-hook 'muse-mode-hook 'footnote-mode)
+;(add-hook 'muse-mode-hook 'footnote-mode)
+(defun my-muse-hook ()
+  "Muse configuration"
+  (footnote-mode)
+  (local-set-key (kbd "C-c f") 'Footnote-add-footnote))
 
+(add-hook 'muse-mode-hook 'my-muse-hook)
