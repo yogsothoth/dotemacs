@@ -33,3 +33,8 @@
 (setq ido-use-filename-at-point 'guess)
 (setq ido-create-new-buffers 'always)
 (setq ido-ignore-extensions t)
+
+;; put ispell in PATH
+;; OSX
+(setq exec-path
+      (append exec-path '("/opt/local/bin")))
