@@ -37,6 +37,30 @@
 ; Make RefTeX interact with AUCTeX
 (setq reftex-plug-into-AUCTeX t)
 
+;; flyspell
+;; Turn on flyspell for AUCTeX
+(add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
+
+
+;; AUCTeX-specific keybindings
+;; Add footnotes with C-c f (as with muse)
+(defun kafka-auctex-insert-footnote
+    ()
+  (interactive)
+  "Insert a footnote in AUCTeX mode and put the cursor after the opening brace"
+  (progn
+    (insert "\\footnote{}")
+    (backward-char)))
+
+(defun kafka-auctex-footnote-hook
+    ()
+  "Add hook to AUCTeX to insert footnotes with C-c f"
+  (local-set-key (kbd "C-c f") 'kafka-auctex-insert-footnote))
+
+(add-hook 'LaTeX-mode-hook 'kafka-auctex-footnote-hook)
+
+
+
 ;; OSX-specific
 (setenv "PATH"
 	(concat
