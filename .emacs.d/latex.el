@@ -59,6 +59,9 @@
 
 (add-hook 'LaTeX-mode-hook 'kafka-auctex-footnote-hook)
 
+;; map C-c ; to execute-extended-command instead of comment-region
+(add-hook 'LaTeX-mode-hook '(lambda () (local-set-key (kbd "C-c ;") 'execute-extended-command)))
+
 
 
 ;; OSX-specific
