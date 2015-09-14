@@ -36,3 +36,6 @@
     (setq mac-option-modifier nil
 	  mac-command-modifier 'meta
 	  x-select-enable-clipboard t))
+
+;; insert date
+(global-set-key (kbd "C-c d") 'insert-date)
