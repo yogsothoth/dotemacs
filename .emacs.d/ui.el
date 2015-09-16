@@ -15,8 +15,8 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/replace-colorthemes"))
 
-(load-theme 'charcoal-black t t)
-(enable-theme 'charcoal-black)
+(load-theme 'xemacs t t)
+(enable-theme 'xemacs)
 
 ;; Keep the cursor blinking forever
 (setq blink-cursor-blinks 0)
@@ -36,7 +36,7 @@
 ;; taken from http://emacs-fu.blogspot.fr/2008/12/highlighting-current-line.html
 ;; highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
-(defface hl-line '((t (:background "DeepSkyBlue4")))
+(defface hl-line '((t (:background "gainsboro")))
   "Face to use for `hl-line-face'." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 ; turn it on for all modes by default

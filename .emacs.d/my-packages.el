@@ -28,6 +28,7 @@
 		    company-web
 		    cperl-mode
 		    dash
+		    elfeed
 		    ess
 		    js2-mode
 		    js3-mode
