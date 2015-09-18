@@ -29,6 +29,7 @@
 		    cperl-mode
 		    dash
 		    elfeed
+		    flycheck
 		    ess
 		    js2-mode
 		    js3-mode
