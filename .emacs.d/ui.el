@@ -54,3 +54,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 ;; (require 'maxframe)
 ;; (add-hook 'window-setup-hook 'maximize-frame t)
+
+;; display tooltips in the echo area
+(tooltip-mode -1)
+(setq tooltip-use-echo-area t)
