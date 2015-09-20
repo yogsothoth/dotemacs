@@ -44,6 +44,9 @@
 ;; eshell functions
 (load-user-file "my-eshell.el")
 
+;; proced
+(load-user-file "my-proced.el")
+
 ;; buffers and file opening
 (load-user-file "buffers.el")
 
