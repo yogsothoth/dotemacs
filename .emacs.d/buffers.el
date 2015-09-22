@@ -25,3 +25,7 @@
 ;; open large buffers
 (add-to-list 'load-path "~/.emacs.d/floating/vlfi")
 (require 'vlf-setup)
+
+;; trying out without asking
+(custom-set-variables
+ '(vlf-application 'dont-ask))
