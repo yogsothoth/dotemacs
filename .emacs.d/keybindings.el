@@ -39,3 +39,11 @@
 
 ;; insert date
 (global-set-key (kbd "C-c d") 'insert-date)
+
+;; breadcrumb keybindings
+(global-set-key (kbd "S-<Space>") 'bc-set)
+(global-set-key (kbd "M-<left>") 'bc-previous)
+(global-set-key (kbd "M-<right>") 'bc-next)
+(global-set-key (kbd "M-<up>") 'bc-local-previous)
+(global-set-key (kbd "M-<down>") 'bc-local-next)
+(global-set-key (kbd "C-x M-j") 'bc-list)

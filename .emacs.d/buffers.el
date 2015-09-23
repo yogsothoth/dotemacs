@@ -29,3 +29,7 @@
 ;; trying out without asking
 (custom-set-variables
  '(vlf-application 'dont-ask))
+
+;; breadcrumb
+(add-to-list 'load-path "~/.emacs.d/floating/breadcrumb")
+(require 'breadcrumb)
