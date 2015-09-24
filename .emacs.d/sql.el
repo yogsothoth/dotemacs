@@ -9,3 +9,7 @@
 ;; Load RDBMS-specific modes
 (add-to-list 'load-path "~/.emacs.d/floating/rdbms")
 
+;; sql-indent
+(add-to-list 'load-path "~/.emacs.d/floating/sql-indent")
+(eval-after-load "sql"
+  '(load-library "sql-indent"))
