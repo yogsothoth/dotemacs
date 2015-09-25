@@ -1,3 +1,7 @@
+;; a bit of config
+;; don't use company-mode with eshell
+(add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
+
 ;; some tools
 
 ;; eshell stuff
