@@ -47,3 +47,7 @@
 (global-set-key (kbd "M-<up>") 'bc-local-previous)
 (global-set-key (kbd "M-<down>") 'bc-local-next)
 (global-set-key (kbd "C-x M-j") 'bc-list)
+
+;; ESS
+(define-key ess-mode-map (kbd "C-<Tab>") 'other-window)
+
