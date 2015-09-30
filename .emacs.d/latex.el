@@ -65,8 +65,9 @@
 
 
 ;; OSX-specific
-(setenv "PATH"
-	(concat
-	 "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
-	 (getenv "PATH")))
+(if (eq system-type 'darwin)
+    (setenv "PATH"
+	   (concat
+	    "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
+	    (getenv "PATH"))))
 
