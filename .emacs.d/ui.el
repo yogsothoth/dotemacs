@@ -15,7 +15,7 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/replace-colorthemes"))
 
-(load-theme 'xemacs t t)
+(load-theme 'fischmeister t t)
 (enable-theme 'xemacs)
 
 ;; Keep the cursor blinking forever
