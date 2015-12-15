@@ -57,13 +57,17 @@
 ;; can't get this to work on windows
 ;; disable it on windows for now
 (when (not (eq system-type 'windows-nt))
-    (load-user-file "gnus.el"))
+  (load-user-file "gnus.el"))
+
 
 ;; web stuff
 (load-user-file "web.el")
 
 ;; muse
 (load-user-file "my-muse.el")
+
+;; org-based planner
+(load-user-file "my-org.el")
 
 ;; general web development
 (load-user-file "web-dev.el")
