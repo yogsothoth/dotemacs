@@ -30,7 +30,7 @@
      (define-key org-todo-state-map "s"
        #'(lambda nil (interactive) (org-todo "STARTED")))
      (define-key org-todo-state-map "w"
-       #'(lambda nil (interactive) (org-todo "WAITING")))
+       #'(lambda nil (interactive) (org-todo "WAITING")))))
 
 (define-key global-map "\C-cc" 'org-capture)
 
