@@ -33,6 +33,7 @@
 		    ess
 		    js2-mode
 		    js3-mode
+		    magit
 		    muse
 		    paredit
 		    simple-httpd
