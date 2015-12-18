@@ -6,6 +6,9 @@
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
+;; bind C-c ; to execute-extended-command
+(add-hook 'org-mode-hook '(lambda () (local-set-key (kbd "C-c ;") 'execute-extended-command)))
+
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
