@@ -31,7 +31,7 @@
 (load-user-file "completion.el")
 
 ;; global spelling configuration
-(load-user-file "spelling.el")
+;;(load-user-file "spelling.el")
 
 ;; modes-specific configuration
 (load-user-file "latex.el")
