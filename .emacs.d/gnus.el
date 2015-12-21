@@ -2,25 +2,17 @@
 
 (require 'gnus)
 
-;; Windows config taken from
-;; http://חנוך.se/diary/how_to_enable_GnuTLS_for_Emacs_24_on_Windows/index.en.html
-;; certs for Windows taken from http://curl.haxx.se/docs/caextract.html
-
-;; gmail
-
-(setq gnus-select-method '(nnimap "gmail"
-                                  (nnimap-address "imap.gmail.com")
-                                  (nnimap-server-port "imaps")
-                                  (nnimap-stream ssl)))
-
 ;; madrognon
+(setq gnus-select-method '(nnimap "madrognon"
+				  (nnimap-address "madrognon.net")
+				  (nnimap-server-port 143)
+				  (nnimap-stream starttls)))
 
-;; (add-to-list 'gnus-secondary-select-methods '(nnimap "madrognon"
-;; 						     (nnimap-address "ns300827.ip-91-121-66.eu")
-;; 						     (nnimap-server-port 143)
-;; 						     (nnimap-stream ssl)))
-
-
-;(add-to-list 'gnus-secondary-select-methods '(nntp "news.gmane.org"))
-;(add-to-list 'gnus-secondary-select-methods '(nntp "news.gwene.org"))
-
+(setq smtpmail-smtp-server "madrognon.net"
+      smtpmail-default-smtp-server "madrognon.net"
+      send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-service 587
+      user-full-name "Nicolas Herry"
+      mail-host-address "madrognon.net"
+      gnus-message-archive-group (format-time-string "nnimap+madrognon:Sent")
+      gnus-gcc-mark-as-read t)
