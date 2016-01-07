@@ -15,11 +15,17 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/replace-colorthemes"))
 
+(add-to-list 'custom-theme-load-path
+	     (file-name-as-directory "~/emacs-faff-theme"))
+
 ;; (load-theme 'julie t t)
 ;; (enable-theme 'julie)
 
-(load-theme 'zenburn t t)
-(enable-theme 'zenburn)
+;; (load-theme 'zenburn t t)
+;; (enable-theme 'zenburn)
+
+(load-theme 'faff t t)
+(enable-theme 'faff)
 
 ;; Keep the cursor blinking forever
 (setq blink-cursor-blinks 0)
