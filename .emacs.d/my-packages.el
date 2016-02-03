@@ -34,6 +34,7 @@
 		    js2-mode
 		    js3-mode
 		    magit
+		    markdown-mode
 		    muse
 		    paredit
 		    simple-httpd

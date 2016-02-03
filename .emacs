@@ -1,6 +1,8 @@
 ;; .emacs file
 ;; Nicolas Herry (kafka)
 
+;; UTF-8 by default
+(set-language-environment "UTF-8")
 
 ;; load personal stuff
 ;; this is taken directy from here
@@ -40,6 +42,7 @@
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
 (load-user-file "haskell.el")
+(load-user-file "markdown.el")
 (load-user-file "sql.el")
 (load-user-file "soql.el")
 
@@ -61,10 +64,11 @@
 ;; email
 ;; can't get this to work on windows
 ;; disable it on windows for now
-(when (not (eq system-type 'windows-nt))
-  (load-user-file "gnus.el")
-  (load-user-file "bbdb.el"))
-
+;; (when (not (eq system-type 'windows-nt))
+;;   (load-user-file "gnus.el")
+;;   (load-user-file "bbdb.el"))
+(load-user-file "gnus.el")
+;(load-user-file "bbdb.el")
 
 ;; web stuff
 (load-user-file "web.el")
