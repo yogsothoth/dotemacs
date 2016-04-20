@@ -1,6 +1,7 @@
 ;; SQL
 (add-hook 'sql-mode-hook
 	  (lambda ()
+	    (sql-highlight-postgres-keywords)
 	    (flycheck-mode)
 	    (font-lock-add-keywords nil
 				    '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
