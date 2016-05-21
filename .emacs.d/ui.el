@@ -18,18 +18,12 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/emacs-faff-theme"))
 
+(load-theme 'anti-zenburn t t)
+(enable-theme 'anti-zenburn)
 
-(load-theme 'julie t t)
-(enable-theme 'julie)
-
-;; (load-theme 'zenburn t t)
-;; (enable-theme 'zenburn)
-
-;; (load-theme 'faff t t)
-;; (enable-theme 'faff)
-
-;; (load-theme 'sanityinc-tomorrow-day t t)
-;; (enable-theme 'sanityinc-tomorrow-day)
+;; display time
+(display-time-mode 1)
+(setq display-time-format "%d %B %Y %H:%M")
 
 ;; Keep the cursor blinking forever
 (setq blink-cursor-blinks 0)
