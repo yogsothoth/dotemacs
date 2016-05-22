@@ -35,6 +35,8 @@
    ("INBOX.pg-admin" "^To:.*pgsql-admin@postgresql.org")
    ("INBOX.pg-admin" "^Cc:.*pgsql-admin@postgresql.org")
    ("INBOX.emacs-help" "^To:.*help-gnu-emacs@gnu.org")
+   ("INBOX.pg-sql" "^To:.*pgsql-sql@postgresql.org")
+   ("INBOX.pg-sql" "^Cc:.*pgsql-sql@postgresql.org")
    ("INBOX.emacs-help" "^Cc:.*help-gnu-emacs@gnu.org")
    ("INBOX.r-help" "^To:.*r-help@r-project.org")
    ("INBOX.r-help" "^Cc:.*r-help@r-project.org")
@@ -56,5 +58,7 @@
    ("INBOX.freebsd-hackers" "^Cc:.*hackers@freebsd.org")
    ("INBOX.stumpwm" "^To:.*stumpwm-devel@nongnu.org")
    ("INBOX.stumpwm" "^Cc:.*stumpwm-devel@nongnu.org")
+   ("INBOX.yesql" "^To:.*yesql@noreply.github.com")
+   ("INBOX.yesql" "^Cc:.*yesql@noreply.github.com")
    ("INBOX" "")))
 
