@@ -31,6 +31,7 @@
 		    elfeed
 		    flycheck
 		    ess
+		    engine-mode
 		    js2-mode
 		    js3-mode
 		    magit
