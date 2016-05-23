@@ -34,6 +34,8 @@
    ("INBOX.pg-hackers" "^Cc:.*pgsql-hackers@postgresql.org")
    ("INBOX.pg-admin" "^To:.*pgsql-admin@postgresql.org")
    ("INBOX.pg-admin" "^Cc:.*pgsql-admin@postgresql.org")
+   ("INBOX.pg-fr" "^To:.*pgsql-sql-generale@postgresql.org")
+   ("INBOX.pg-fr" "^Cc:.*pgsql-fr-generale@postgresql.org")
    ("INBOX.emacs-help" "^To:.*help-gnu-emacs@gnu.org")
    ("INBOX.pg-sql" "^To:.*pgsql-sql@postgresql.org")
    ("INBOX.pg-sql" "^Cc:.*pgsql-sql@postgresql.org")
