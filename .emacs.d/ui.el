@@ -28,6 +28,10 @@
 ;; Keep the cursor blinking forever
 (setq blink-cursor-blinks 0)
 
+;; beacon
+(beacon-mode 1)
+
+
 ;; Nice fonts on Windows
 ;; Taken from https://github.com/dertuxmalwieder/My-Emacs-config
 (if (eq system-type 'windows-nt)

@@ -15,8 +15,9 @@
 (eval-after-load "sql"
   '(load-library "sql-indent"))
 
-;; sql-upcase
-(add-to-list 'load-path "~/.emacs.d/floating/sql-upcase")
-(when (require 'sql-upcase nil :noerror)
-  (add-hook 'sql-mode-hook 'sql-upcase-mode)
-  (add-hook 'sql-interactive-mode-hook 'sql-upcase-mode))
+;; sqlup-mode
+(add-to-list 'load-path "~/code/sqlup-mode.el")
+(eval-after-load "sql"
+  '(load-library "sqlup-mode"))
+(add-hook 'sql-mode-hook 'sqlup-mode)
+(add-hook 'sql-interactive-mode-hook 'sqlup-mode)

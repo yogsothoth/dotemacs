@@ -18,6 +18,7 @@
 (setq my-packages '(anti-zenburn-theme
 		    anzu
 		    auctex
+		    beacon
 		    cider
 		    clojure-mode
 		    clojure-mode-extra-font-locking
