@@ -21,6 +21,9 @@
 (load-theme 'anti-zenburn t t)
 (enable-theme 'anti-zenburn)
 
+;; font size 10pt
+(set-face-attribute ' default nil :height 100)
+
 ;; display time
 (display-time-mode 1)
 (setq display-time-format "%d %B %Y %H:%M")
