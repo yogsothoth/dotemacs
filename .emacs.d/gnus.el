@@ -78,5 +78,7 @@
    ("INBOX.stumpwm" "^Cc:.*stumpwm-devel@nongnu.org")
    ("INBOX.yesql" "^To:.*yesql@noreply.github.com")
    ("INBOX.yesql" "^Cc:.*yesql@noreply.github.com")
+   ("INBOX.ratpoison-devel" "^To:.*ratpoison-devel@nongnu.org")
+   ("INBOX.ratpoison-devel" "^Cc:.*ratpoison-devel@nongnu.org")
    ("INBOX" "")))
 
