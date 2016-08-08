@@ -45,6 +45,7 @@
 (load-user-file "markdown.el")
 (load-user-file "sql.el")
 (load-user-file "soql.el")
+(load-user-file "my-term.el")
 
 ;; git
 (load-user-file "my-git.el")
@@ -72,6 +73,9 @@
 ;;   (load-user-file "bbdb.el"))
 (load-user-file "gnus.el")
 ;(load-user-file "bbdb.el")
+
+;; music
+(load-user-file "music.el")
 
 ;; web stuff
 (load-user-file "web.el")
