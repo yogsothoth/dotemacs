@@ -80,5 +80,13 @@
    ("INBOX.yesql" "^Cc:.*yesql@noreply.github.com")
    ("INBOX.ratpoison-devel" "^To:.*ratpoison-devel@nongnu.org")
    ("INBOX.ratpoison-devel" "^Cc:.*ratpoison-devel@nongnu.org")
+   ("INBOX.wmaker-dev" "^To:.*wmaker-dev@lists.windowmaker.org")
+   ("INBOX.wmaker-dev" "^Cc:.*wmaker-dev@lists.windowmaker.org")
+   ("INBOX.wmaker-dev" "^To:.*wmaker-dev@lists.windowmaker.info")
+   ("INBOX.wmaker-dev" "^Cc:.*wmaker-dev@lists.windowmaker.info")
+   ("INBOX.wmaker-user" "^To:.*wmaker-user@lists.windowmaker.org")
+   ("INBOX.wmaker-user" "^Cc:.*wmaker-user@lists.windowmaker.org")
+   ("INBOX.wmaker-user" "^To:.*wmaker-user@lists.windowmaker.info")
+   ("INBOX.wmaker-user" "^Cc:.*wmaker-user@lists.windowmaker.info")
    ("INBOX" "")))
 
