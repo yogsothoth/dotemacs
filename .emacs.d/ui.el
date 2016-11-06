@@ -18,8 +18,8 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/emacs-faff-theme"))
 
-(load-theme 'subtle-hacker t t)
-(enable-theme 'subtle-hacker)
+(load-theme 'dark-blue2 t t)
+(enable-theme 'dark-blue2)
 
 ;; font size 10pt
 (set-face-attribute ' default nil :height 100)
