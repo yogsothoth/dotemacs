@@ -42,6 +42,8 @@
 		    simple-httpd
 		    skewer-less
 		    skewer-mode
+		    slime
+		    slime-company
 		    web-completion-data
 		    yasnippet
 		    zenburn-theme		    
