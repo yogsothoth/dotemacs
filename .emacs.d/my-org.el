@@ -68,5 +68,61 @@
    '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
              "* TODO %?\n %u\n  %i\n  %a")
         ("n" "Notes" entry (file+datetree "~/org/notes.org")
-             "* %?\nEntered on %U\n  %i\n  %a")))
+	 "* %?\nEntered on %U\n  %i\n  %a")))
 
+;; beastieboy.net
+;; custom header, footer, etc.
+(defvar beastieboy-header
+  "<link rel=\"stylesheet\" href=\"css/site.css\" type=\"text/css\"/>")
+(defvar beastieboy-preamble
+  "<div class=\"intro\">
+     <h1><b>Beastie</b>Boy</h1>
+     <p>FreeBSD, Lisp, Emacs, PostgreSQL & co.</p>
+   </div>
+   <div class=\"nav\">
+    <ul>
+      <li><a href=\"index.html\">Home</a></li>
+      <li><a href=\"about.html\">About</a></li>
+      <li><a href=\"contact.html\">Contact</a></li>
+    </ul>
+   </div>")
+(defvar beastieboy-footer
+  "<div class=\"footer\">
+      &copy; 2017 %a.<br/>
+      Created %d.<br/>
+      Last updated %C. <br/>
+      Built with %c.<br/>
+      <img src=\"images/powered-freebsd.gif\" alt=\"Powered by FreeBSD\"/>
+   </div>")
+(setq org-publish-project-alist
+      `(
+	("org"
+	 :base-directory "~/org/beastieboy.net"
+	 :publishing-directory "~/beastieboy.net/"
+	 :publishing-function org-html-publish-to-html
+	 :recursive t
+	 :section-numbers nil
+	 :with-toc nil
+	 :base-extension "org"
+	 :html-head ,beastieboy-header
+	 :html-preamble ,beastieboy-preamble
+	 :html-postamble ,beastieboy-footer)
+	("org-images"
+	 :base-directory "~/org/beastieboy.net/images"
+	 :publishing-directory "~/beastieboy.net/images/"
+	 :base-extension "png\\|jpg\\|gif"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("org-js"
+	 :base-directory "~/org/beastieboy.net/js"
+	 :publishing-directory "~/beastieboy.net/js/"
+	 :base-extension "js"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("org-css"
+	 :base-directory "~/org/beastieboy.net/css"
+	 :publishing-directory "~/beastieboy.net/css/"
+	 :base-extension "css"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("beastieboy" :components ("org" "org-images" "org-js" "org-css"))))
