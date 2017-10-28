@@ -18,8 +18,8 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/emacs-faff-theme"))
 
-(load-theme 'late-night t t)
-(enable-theme 'late-night)
+(load-theme 'julie t t)
+(enable-theme 'julie)
 
 ;; font size 10pt
 (set-face-attribute ' default nil :height 100)
