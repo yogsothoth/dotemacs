@@ -49,7 +49,7 @@
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
 (load-user-file "haskell.el")
-(load-user-file "lisp.el")
+;;(load-user-file "lisp.el")
 (load-user-file "markdown.el")
 (load-user-file "sql.el")
 (load-user-file "soql.el")
