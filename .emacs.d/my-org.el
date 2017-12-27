@@ -125,4 +125,34 @@
 	 :base-extension "css"
 	 :publishing-function org-publish-attachment
 	 :recursive t)
-	("beastieboy" :components ("org" "org-images" "org-js" "org-css"))))
+	("org-remote"
+	 :base-directory "~/org/beastieboy.net"
+	 :publishing-directory "/ssh:beastieboy@beastieboy.net:/usr/local/www/beastieboy.net/"
+	 :publishing-function org-html-publish-to-html
+	 :recursive t
+	 :section-numbers nil
+	 :with-toc nil
+	 :base-extension "org"
+	 :html-head ,beastieboy-header
+	 :html-preamble ,beastieboy-preamble
+	 :html-postamble ,beastieboy-footer)
+	("org-images-remote"
+	 :base-directory "~/org/beastieboy.net/images"
+	 :publishing-directory "/ssh:beastieboy@beastieboy.net:/usr/local/www/beastieboy.net/images/"
+	 :base-extension "png\\|jpg\\|gif"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("org-js-remote"
+	 :base-directory "~/org/beastieboy.net/js"
+	 :publishing-directory "/ssh:beastieboy@beastieboy.net:/usr/local/www/beastieboy.net/js/"
+	 :base-extension "js"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("org-css-remote"
+	 :base-directory "~/org/beastieboy.net/css"
+	 :publishing-directory "/ssh:beastieboy@beastieboy.net:/usr/local/www/beastieboy.net/css/"
+	 :base-extension "css"
+	 :publishing-function org-publish-attachment
+	 :recursive t)
+	("beastieboy" :components ("org" "org-images" "org-js" "org-css"))
+	("beastieboy-remote" :components ("org-remote" "org-images-remote" "org-js-remote" "org-css-remote"))))

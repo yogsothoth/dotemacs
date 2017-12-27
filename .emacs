@@ -50,7 +50,7 @@
 (load-user-file "elisp.el")
 (load-user-file "clojure.el")
 (load-user-file "haskell.el")
-;;(load-user-file "lisp.el")
+(load-user-file "lisp.el")
 (load-user-file "markdown.el")
 (load-user-file "sql.el")
 (load-user-file "soql.el")
@@ -128,9 +128,9 @@
    (quote
     (exwm exwm-x slime slime-company zenburn-theme yasnippet skewer-less paredit muse markdown-mode magit js3-mode flycheck ess engine-mode elfeed company-web company-statistics company-go cmake-project clojure-mode-extra-font-locking cider beacon auctex anzu anti-zenburn-theme)))
  '(safe-local-variable-values (quote ((TeX-master . t))))
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "madrognon.net" t)
- '(smtpmail-smtp-service 25 t)
+;; '(send-mail-function (quote smtpmail-send-it))
+;; '(smtpmail-smtp-server "madrognon.net" t)
+;; '(smtpmail-smtp-service 25 t)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote

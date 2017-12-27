@@ -4,8 +4,16 @@
 
 ;; Packages
 (require 'package)
-(add-to-list 'package-archives
-	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+;;(add-to-list 'package-archives
+(setq package-archives
+      '(("gnu"          . "https://elpa.gnu.org/packages/")
+	("melpa-stable" . "http://stable.melpa.org/packages/")
+	("melpa"        . "http://melpa.org/packages/"))
+      package-archive-priorities
+      '(("gnu"          . 15)
+	("melpa-stable" . 10)
+	("melpa"        . 5)))
+	     
 (package-initialize)
 
 (unless package-archive-contents
@@ -24,6 +32,8 @@
 		    clojure-mode-extra-font-locking
 		    cmake-project
 		    company
+		    company-irony
+		    company-irony-c-headers
 		    company-go
 		    company-statistics
 		    company-web
@@ -33,12 +43,14 @@
 		    flycheck
 		    ess
 		    engine-mode
+		    irony
 		    js2-mode
 		    js3-mode
 		    magit
 		    markdown-mode
 		    muse
 		    paredit
+		    rtags
 		    simple-httpd
 		    skewer-less
 		    skewer-mode
