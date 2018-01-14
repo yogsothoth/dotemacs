@@ -1,53 +1,40 @@
 ;; cpp.el
 ;; C++ configuration
+(require 'cc-mode)
 
-(require 'rtags)
-(require 'company-rtags)
+(require 'company)
+(require 'ggtags)
 
-(setq rtags-completions-enabled t)
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends 'company-rtags))
-(setq rtags-autostart-diagnostics t)
-(rtags-enable-standard-keybindings)
+;; (add-hook 'c-mode-common-hook
+;;           (lambda ()
+;;             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+;;               (ggtags-mode 1))))
 
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
+;; (define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
+;; (define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
+;; (define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
+;; (define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
+;; (define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
+;; (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap-complete-symbol]
-    'irony-completion-at-point-async))
-
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-(setq company-backends (delete 'company-semantic company-backends))
-
-(setq company-idle-delay 0)
-(require 'company-irony-c-headers)
-
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends 'company-irony-c-headers 'company-irony))
-
-(define-key c-mode-map [(tab)] 'company-complete)
-(define-key c++-mode-map [(tab)] 'company-complete)
-
-(require 'flycheck-rtags)
-(defun my-flychek-rtags-setup ()
-  (flycheck-select-checker 'rtags)
-  (setq-local flycheck-highlighting-mode nil)
-  (setq-local flycheck-check-syntax-automatically nil))
-(add-hook 'c-mode-common-hook #'my-flycheck-rtags-setup)
-
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+;;(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+;;(setq imenu-create-index-function #'ggtags-build-imenu-index)
 
 (require 'cmake-ide)
 (cmake-ide-setup)
+
+(require 'sr-speedbar)
+
+;;(setq company-backends (delete 'company-semantic company-backends))
+
+;;(define-key c-mode-map  [(tab)] 'company-complete)
+;;(define-key c++-mode-map  [(tab)] 'company-complete)
+
+;; (require 'company-c-headers)
+;; (add-to-list 'company-backends 'company-c-headers)
+;; (add-to-list 'company-c-headers-path-system "/usr/local/llvm50/include/")
+;; (add-to-list 'company-c-headers-path-system "/usr/include/c++/v1/")
+
 
 
 

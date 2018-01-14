@@ -85,16 +85,16 @@
 ;;(load-user-file "music.el")
 
 ;; web stuff
-(load-user-file "web.el")
+;;(load-user-file "web.el")
 
 ;; muse
-(load-user-file "my-muse.el")
+;;(load-user-file "my-muse.el")
 
 ;; org-based planner
 (load-user-file "my-org.el")
 
 ;; general web development
-(load-user-file "web-dev.el")
+;;(load-user-file "web-dev.el")
 
 ;; stupid stuff
 (load-user-file "zone.el")
@@ -106,10 +106,10 @@
 	 '("~/bin")))
 
 ;; cygwin
-(setq exec-path
-      (append
-       exec-path
-       '("c:/cygwin64/bin")))
+;; (setq exec-path
+;;       (append
+;;        exec-path
+;;        '("c:/cygwin64/bin")))
 
 ;; bookmarks
 ;; automatically save bookmarks
@@ -132,8 +132,11 @@
     ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
  '(package-selected-packages
    (quote
-    (w3m exwm exwm-x slime slime-company zenburn-theme yasnippet skewer-less paredit muse markdown-mode magit js3-mode flycheck ess engine-mode elfeed company-web company-statistics company-go cmake-project clojure-mode-extra-font-locking cider beacon auctex anzu anti-zenburn-theme)))
- '(safe-local-variable-values (quote ((TeX-master . t))))
+    (company-c-headers sr-speedbar ggtags w3m exwm exwm-x slime slime-company zenburn-theme yasnippet skewer-less paredit muse markdown-mode magit js3-mode flycheck ess engine-mode elfeed company-web company-statistics company-go cmake-project clojure-mode-extra-font-locking cider beacon auctex anzu anti-zenburn-theme)))
+ '(safe-local-variable-values
+   (quote
+    ((company-clang-arguments "-I/home/kafka/code/shimrod/src/include")
+     (TeX-master . t))))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote

@@ -82,13 +82,15 @@
    <div class=\"nav\">
     <ul>
       <li><a href=\"index.html\">Home</a></li>
+      <li><a href=\"gopher://gopher.beastieboy.net:70\">Gopher</a></li>
       <li><a href=\"about.html\">About</a></li>
       <li><a href=\"contact.html\">Contact</a></li>
+      <li><a href=\"https://mastodon.sdf.org/@beastieboy\">Mastodon</a></li>
     </ul>
    </div>")
 (defvar beastieboy-footer
   "<div class=\"footer\">
-      &copy; 2017 %a.<br/>
+      &copy; 2017-2018 %a.<br/>
       Created %d.<br/>
       Last updated %C. <br/>
       Built with %c.<br/>
