@@ -81,8 +81,8 @@
 (load-user-file "gnus.el")
 ;;(load-user-file "my-bbdb.el")
 
-;; music
-;;(load-user-file "music.el")
+;; music and video
+(load-user-file "my-emms.el")
 
 ;; web stuff
 ;;(load-user-file "web.el")
