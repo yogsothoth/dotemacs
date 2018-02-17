@@ -87,17 +87,14 @@
 ;; web stuff
 ;;(load-user-file "web.el")
 
-;; muse
-;;(load-user-file "my-muse.el")
-
 ;; org-based planner
 (load-user-file "my-org.el")
 
-;; general web development
-;;(load-user-file "web-dev.el")
+;; stumpwm
+(load-user-file "stumpwm.el")
 
 ;; stupid stuff
-(load-user-file "zone.el")
+;;(load-user-file "zone.el")
 
 ;; set exec-path
 (setq exec-path
@@ -137,6 +134,7 @@
    (quote
     ((company-clang-arguments "-I/home/kafka/code/shimrod/src/include")
      (TeX-master . t))))
+ '(stumpbuffer-quit-window-after-command nil)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
