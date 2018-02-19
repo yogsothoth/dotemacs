@@ -3,6 +3,7 @@
 
 (setq inferior-lisp-program "sbcl --dynamic-space-size 2048")
 (add-to-list 'slime-contribs 'slime-autodoc)
+(add-to-list 'slime-contribs 'slime-indentation)
 ;;(slime-setup '(slime-company))
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (load (expand-file-name "~/code/slime-repl-ansi-color/slime-repl-ansi-color.el"))
@@ -12,4 +13,9 @@
 ;; from https://emacs.stackexchange.com/questions/3513/starting-slime-in-a-pop-up-frame/3516
 (setq display-buffer-alist
       (quote (("\\*inferior-lisp\\*" display-buffer-pop-up-frame
-         (nil)))))
+	       (nil)))))
+
+;; indentation for lisp: sbc
+(require 'slime-indentation)
+(setq lisp-indent-function 'common-lisp-indent-function)
+(setq common-lisp-style "sbcl")
