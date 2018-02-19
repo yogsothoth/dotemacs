@@ -12,14 +12,12 @@
 ;; Colour themes
 ;; Use the replace-colorthemes package
 ;; from https://github.com/emacs-jp/replace-colorthemes
-(add-to-list 'custom-theme-load-path
-	     (file-name-as-directory "~/replace-colorthemes"))
+;; Not necessary anymore? Many themes are straight in MELPA these days
+;; (add-to-list 'custom-theme-load-path
+;; 	     (file-name-as-directory "~/replace-colorthemes"))
 
-(add-to-list 'custom-theme-load-path
-	     (file-name-as-directory "~/emacs-faff-theme"))
-
-(load-theme 'dark-blue2 t t)
-(enable-theme 'dark-blue2)
+(load-theme 'sourcerer t t)
+(enable-theme 'sourcerer)
 
 ;; font size 10pt
 (set-face-attribute ' default nil :height 100)
@@ -33,7 +31,6 @@
 
 ;; beacon
 (beacon-mode 1)
-
 
 ;; Nice fonts on Windows
 ;; Taken from https://github.com/dertuxmalwieder/My-Emacs-config

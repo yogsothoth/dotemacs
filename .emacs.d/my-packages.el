@@ -43,6 +43,7 @@
 		    flycheck
 		    ess
 		    engine-mode
+		    ggtags
 		    irony
 		    js2-mode
 		    js3-mode
@@ -56,6 +57,8 @@
 		    skewer-mode
 		    slime
 		    slime-company
+		    sourcerer-theme
+		    sr-speedbar
 		    web-completion-data
 		    yasnippet
 		    zenburn-theme		    
