@@ -77,7 +77,7 @@
 (defvar beastieboy-preamble
   "<div class=\"intro\">
      <h1><b>Beastie</b>Boy</h1>
-     <p>FreeBSD, Lisp, Emacs, PostgreSQL & co.</p>
+     <p>FreeBSD, Lisp, Emacs, PostgreSQL &amp; co.</p>
    </div>
    <div class=\"nav\">
     <ul>
