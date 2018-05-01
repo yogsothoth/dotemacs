@@ -13,11 +13,11 @@
 ;; Use the replace-colorthemes package
 ;; from https://github.com/emacs-jp/replace-colorthemes
 ;; Not necessary anymore? Many themes are straight in MELPA these days
-;; (add-to-list 'custom-theme-load-path
-;; 	     (file-name-as-directory "~/replace-colorthemes"))
+(add-to-list 'custom-theme-load-path
+ 	     (file-name-as-directory "~/replace-colorthemes"))
 
-(load-theme 'sourcerer t t)
-(enable-theme 'sourcerer)
+(load-theme 'dark-blue2 t t)
+(enable-theme 'dark-blue2)
 
 ;; font size 10pt
 (set-face-attribute ' default nil :height 100)
