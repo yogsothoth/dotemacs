@@ -16,29 +16,23 @@
 
 (define-key mode-specific-map [?a] 'org-agenda)
 
-(eval-after-load "org"
-  '(progn
-     (define-prefix-command 'org-todo-state-map)
-
-     (define-key org-mode-map "\C-cx" 'org-todo-state-map)
-
-     (define-key org-todo-state-map "x"
-       #'(lambda nil (interactive) (org-todo "CANCELLED")))
-     (define-key org-todo-state-map "d"
-       #'(lambda nil (interactive) (org-todo "DONE")))
-     (define-key org-todo-state-map "f"
-       #'(lambda nil (interactive) (org-todo "DEFERRED")))
-     (define-key org-todo-state-map "l"
-       #'(lambda nil (interactive) (org-todo "DELEGATED")))
-     (define-key org-todo-state-map "s"
-       #'(lambda nil (interactive) (org-todo "STARTED")))
-     (define-key org-todo-state-map "w"
-       #'(lambda nil (interactive) (org-todo "WAITING")))))
-
 (define-key global-map "\C-cc" 'org-capture)
+(define-key org-mode-map "\C-c\\" 'org-match-sparse-tree)
 
-(setq org-agenda-files'("~/org/todo.org"))
-(setq org-default-notes-file '("~/org/notes.org"))
+;; Lazy sync with iCloud (from iCloud to local, as the oppostite works out of the box)
+(add-hook 'org-mode-hook
+	  '(lambda () 
+	     (auto-revert-mode t)))
+
+;; use iCloud client on Windows
+(if (eq system-type 'windows-nt)
+  (setq my-org-agenda-file "C:/Users/212608979/iCloudDrive/iCloud~com~appsonthemove~beorg/org/todo.org"
+	my-org-default-notes-file "c:/Users/212608979/iCloudDrive/iCloud~com~appsonthemove~beorg/org/notes.org")
+  (setq my-org-agenda-file "~/org/todo.org"
+	my-org-default-notes-file "~/org/notes.org"))
+
+(setq org-agenda-files `(,my-org-agenda-file))
+(setq org-default-notes-file `(,my-org-default-notes-file))
 (setq org-agenda-ndays 7)
 (setq org-deadline-warning-days 14)
 (setq org-agenda-show-all-dates t)
@@ -65,9 +59,9 @@
 					  (quote regexp) "\n]+>")))
 	     (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
 (setq org-capture-templates
-   '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-             "* TODO %?\n %u\n  %i\n  %a")
-        ("n" "Notes" entry (file+datetree "~/org/notes.org")
+   '(("t" "Todo" entry (file+headline my-org-agenda-file "Tasks")
+             "* TODO %?\n %u\n  %i\n  %a %(with-current-buffer (org-capture-get :original-buffer) (number-to-string (line-number-at-pos)))")
+        ("n" "Notes" entry (file+datetree my-org-default-notes-file)
 	 "* %?\nEntered on %U\n  %i\n  %a")))
 
 ;; beastieboy.net
