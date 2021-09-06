@@ -2,7 +2,7 @@
 ;; Buffer management, file opening
 
 ;; Cleanup buffers automatically
-(require 'midnight)
+;;(require 'midnight)
 
 
 ;; open recent files

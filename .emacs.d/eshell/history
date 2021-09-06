@@ -1,0 +1,128 @@
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+pdflatex irina.tex 
+cd ..
+mkdir randombits
+cd randombits/
+ls
+mv ../randombits.tex .
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+pdflatex randombits.tex 
+cd ../../
+mkdir norsk
+cd norsk
+pdflatex norsk.tex 
+pdflatex norsk.tex 
+pdflatex norsk.
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+pdflatex norsk.tex
+ls -l /tmp
+rm -rf /tmp/7b-store-tests
+ls -l /tmp
+ls -l /tmp
+rm -rf /tmp/7b-store-tests
+cd ..
+grep -r transaction *
+ls -l /tmp
+rm -rf ../7b-build/
+sh ./bin/build.sh -d
+rm -rf ../7b-build/
+sh ./bin/build.sh -d
+rm -rf ../7b-build/
+sh ./bin/build.sh -d
+rm -rf ../7b-build/
+sh ./bin/build.sh -d
+su
+clear
+cd ..
+ls -l
+ls 7bsave
+mkdir old7b-repos
+mv 7b-web-angular old7b-repos/
+mv 7bweb-old old7b-repos
+mv 7b-web-old old7b-repos/
+mv 7bsave old7b-repos/
+mv doc-from-7b old7b-repos/
+mv docsrc-from-7b/ old7b-repos/
+mv old-docsrc/ old7b-repos/
+mv save7b old7b-repos/
+clear
+ls -l
+ls old-stuff/
+mv angular-todo-app/ old-stuff/
+mv bookish- old-stuff/
+mv bookish-* old-stuff/
+mv bknrtest.lisp old7b-repos/
+mv macro-7b-add-node.lisp old7b-repos/
+mv whatever.lisp old7b-repos/
+cat hello.rs
+rm hello.rs 
+./hello
+rm hello
+ls temp
+mv temp old-stuff/
+clear
+ls -l
+rm bknrtest.lisp\~ 
+npx create-react-app 7b-web
+uname -a
+exit
+pwd
+cd code/
+cd ..
+python3.7 -m pip install --user pipx
+su
+python38 -m pip install --user pipx
+exit
+python38 -m pip install --user pipx
+python3.8 -m pip install --user pipx
+export PATH=$PATH:/$HOME/.local/bin
+pipx install virtualenv
+source .profile
+exit
+ssh 185.232.76.134
+ssh cloudsigma@185.232.76.134
+exit

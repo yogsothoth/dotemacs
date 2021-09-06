@@ -23,10 +23,12 @@
   (unless (package-installed-p package-name)
     (package-install package-name)))
 
-(setq my-packages '(anti-zenburn-theme
+(setq my-packages '(ample-theme
+		    anti-zenburn-theme
 		    anzu
 		    auctex
 		    beacon
+		    buffer-move
 		    cider
 		    clojure-mode
 		    clojure-mode-extra-font-locking
@@ -39,26 +41,26 @@
 		    company-web
 		    cperl-mode
 		    dash
-		    elfeed
+		    emms
 		    flycheck
 		    ess
 		    engine-mode
 		    ggtags
 		    irony
 		    js2-mode
-		    js3-mode
 		    magit
 		    markdown-mode
-		    muse
 		    paredit
 		    rtags
 		    simple-httpd
+		    silkworm-theme
 		    skewer-less
 		    skewer-mode
 		    slime
 		    slime-company
 		    sourcerer-theme
 		    sr-speedbar
+		    tide
 		    web-completion-data
 		    yasnippet
 		    zenburn-theme		    

@@ -20,8 +20,8 @@
 ;;(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 ;;(setq imenu-create-index-function #'ggtags-build-imenu-index)
 
-(require 'cmake-ide)
-(cmake-ide-setup)
+;;(require 'cmake-ide)
+;;(cmake-ide-setup)
 
 (require 'sr-speedbar)
 

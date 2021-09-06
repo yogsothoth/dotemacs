@@ -71,3 +71,22 @@
 	    "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
 	    (getenv "PATH"))))
 
+;; diary
+
+
+(defun kafka-insert-journal-entry (title)
+  (interactive "sEntry title: ")
+  (beginning-of-line)
+  (insert (concat  "\\begin{loggentry}{" (format-time-string "%A %d %B %Y") "}{" title "}
+
+\\end{loggentry}"))
+  (search-backward "\\")
+  (backward-char))
+
+(defun kafka-auctex-journal-hook
+    ()
+  "Add hook to AUCTeX to insert journal entries with C-c C-j"
+  (local-set-key (kbd "C-c q") 'kafka-insert-journal-entry))
+
+(add-hook 'LaTeX-mode-hook 'kafka-auctex-journal-hook)
+

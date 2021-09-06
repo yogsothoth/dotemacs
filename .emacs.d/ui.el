@@ -5,9 +5,13 @@
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; No startup screen
 (setq inhibit-splash-screen t)
+
+;; No CTRL-Z
+(global-unset-key (kbd "C-z"))
 
 ;; Colour themes
 ;; Use the replace-colorthemes package
@@ -16,11 +20,11 @@
 (add-to-list 'custom-theme-load-path
  	     (file-name-as-directory "~/replace-colorthemes"))
 
-(load-theme 'sourcerer t t)
-(enable-theme 'sourcerer)
+(load-theme 'darktooth t t)
+(enable-theme 'darktooth)
 
-;; font size 10pt
-(set-face-attribute ' default nil :height 100)
+;; font
+(set-face-attribute 'default nil :font "Fantasque Sans Mono" :height 120)
 
 ;; display time
 (display-time-mode 1)
@@ -44,14 +48,14 @@
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
-;; taken from http://emacs-fu.blogspot.fr/2008/12/highlighting-current-line.html
-;; highlight the current line; set a custom face, so we can
-;; recognize from the normal marking (selection)
-;; (defface hl-line '((t (:background "gainsboro")))
-
-(defface hl-line '((t (:background "grey16")))
-  "Face to use for `hl-line-face'." :group 'hl-line)
-(setq hl-line-face 'hl-line)
+;; highlight the current line
+(require 'hl-line)
+(require 'color)
+;;(defface 'hl-line '((t (:background "slateblue")))
+;; (set-face-attribute hl-line-face
+;; 		    nil
+;; 		    :background "slateblue"
+;; 		    :foreground "yellow")
 ; turn it on for all modes by default
 (global-hl-line-mode t)
 
@@ -69,3 +73,14 @@
 
 ;; winner-mode
 (winner-mode t)
+
+;; backup files in a single directory
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+
+;; volume control
+(define-key global-map (kbd "<f2>") '(shell-command "mixer vol -10:-10"))
+(define-key global-map (kbd "<f3>") '(shell-command "mixer vol +10:+10"))
+
+
+(require 'buffer-move)

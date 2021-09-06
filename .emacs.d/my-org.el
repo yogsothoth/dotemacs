@@ -2,7 +2,7 @@
 ;; slightly adapted from John Wiegley's configuration and workflow
 ;; http://newartisans.com/2007/08/using-org-mode-as-a-day-planner/
 
-(require 'org-install)
+;; (require 'org-install)
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
@@ -14,10 +14,11 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+
 (define-key mode-specific-map [?a] 'org-agenda)
 
 (define-key global-map "\C-cc" 'org-capture)
-(define-key org-mode-map "\C-c\\" 'org-match-sparse-tree)
+;;(define-key org-mode-map "\C-c\\" 'org-match-sparse-tree)
 
 ;; Lazy sync with iCloud (from iCloud to local, as the oppostite works out of the box)
 (add-hook 'org-mode-hook

@@ -12,3 +12,5 @@
 (setq company-tooltip-align-annotations t)
 (add-hook 'before-save-hook 'tide-format-before-save)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))

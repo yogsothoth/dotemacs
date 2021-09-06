@@ -49,5 +49,5 @@
 (global-set-key (kbd "C-x M-j") 'bc-list)
 
 ;; ESS
-(define-key ess-mode-map (kbd "C-<Tab>") 'other-window)
+;; (define-key ess-mode-map (kbd "C-<Tab>") 'other-window)
 
